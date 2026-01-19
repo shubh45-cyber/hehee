@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday Tanisha 💖</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Poppins&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+    font-family:'Poppins',sans-serif;
+    background:radial-gradient(circle at top,#ffb3c6,#ff8fab);
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+}
+#wrapper{
+    width:100%;
+    max-width:420px;
+    background:#fff;
+    border-radius:26px;
+    padding:20px 16px;
+    box-shadow:0 30px 60px rgba(0,0,0,.25);
+    position:relative;
+    z-index:2;
+}
+.card{display:none;text-align:center}
+.card.active{display:block}
+
+/* TEXT */
+h2,h3{
+    font-family:'Dancing Script',cursive;
+    color:#ff2f73;
+}
+.long-text{
+    font-size:14.5px;
+    line-height:1.7;
+    white-space:pre-wrap;
+}
+
+/* PHOTO */
+.photo-wrapper{
+    position:relative;
+    width:220px;
+    height:220px;
+    margin:18px auto;
+}
+.photo-glow{
+    position:absolute;
+    inset:-14px;
+    border-radius:50%;
+    background:radial-gradient(circle,#ff8fab,transparent 70%);
+    filter:blur(16px);
+    animation:pulse 3s infinite;
+}
+.photo-frame{
+    position:relative;
+    width:100%;
+    height:100%;
+    border-radius:50%;
+    padding:5px;
+    background:linear-gradient(135deg,#ff8fab,#ff2f73);
+}
+.photo-frame img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:50%;
+    border:4px solid #fff;
+}
+@keyframes pulse{50%{transform:scale(1.05)}}
+
+/* BUTTON */
+button{
+    background:#ff2f73;
+    color:#fff;
+    border:none;
+    padding:10px 22px;
+    border-radius:24px;
+    cursor:pointer;
+    margin-top:14px;
+    font-size:15px;
+}
+
+/* GIFT */
+.gift{
+    font-size:72px;
+    cursor:pointer;
+    animation:bounce 1.4s infinite;
+}
+@keyframes bounce{50%{transform:translateY(-16px)}}
+
+/* HUG */
+.cat{
+    font-size:88px;
+    animation:hug 1.2s infinite;
+}
+@keyframes hug{50%{transform:scale(1.15)}}
+
+/* FLOATING HEARTS */
+.heart,.petal{
+    position:absolute;
+    top:-20px;
+    animation:fall 8s linear infinite;
+}
+@keyframes fall{
+    to{
+        transform:translateY(120vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
+/* FINAL ENDING */
+.final-bg{
+    position:absolute;
+    inset:0;
+    background:
+      radial-gradient(circle at top,#ff9ebc,transparent 60%),
+      radial-gradient(circle at bottom,#ffd6e8,transparent 60%);
+    z-index:-1;
+    animation:bgPulse 6s infinite alternate;
+}
+@keyframes bgPulse{to{opacity:1}}
+
+.name-reveal{
+    display:flex;
+    justify-content:center;
+    gap:8px;
+    margin:26px 0;
+}
+.name-reveal span{
+    font-family:'Dancing Script',cursive;
+    font-size:42px;
+    color:#ff2f73;
+    opacity:0;
+    transform:scale(.5);
+    animation:reveal .6s forwards;
+}
+@keyframes reveal{
+    to{opacity:1;transform:scale(1)}
+}
+
+/* 🌸 POETRY SECTION */
+.poetry-section{
+    padding:60px 16px;
+    display:flex;
+    justify-content:center;
+}
+
+.poetry-box{
+    max-width:360px;
+    width:100%;
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(10px);
+    border-radius:20px;
+    padding:24px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
+    animation:fadeUp 1.2s ease;
+}
+
+.poetry-box h2{
+    font-family:'Dancing Script',cursive;
+    font-size:28px;
+    margin-bottom:14px;
+}
+
+.poetry-line{
+    opacity:0;
+    font-size:15px;
+    line-height:1.7;
+    margin:6px 0;
+    animation:lineReveal .8s forwards;
+}
+
+.poetry-line:nth-child(2){animation-delay:.3s}
+.poetry-line:nth-child(3){animation-delay:.6s}
+.poetry-line:nth-child(4){animation-delay:.9s}
+.poetry-line:nth-child(5){animation-delay:1.2s}
+
+@keyframes lineReveal{
+    from{opacity:0;transform:translateY(10px)}
+    to{opacity:1;transform:translateY(0)}
+}
+
+/* 😂 FUNNY SECTION */
+.funny-section{
+    padding:50px 16px 80px;
+    text-align:center;
+}
+
+.funny-section h2{
+    font-size:24px;
+    margin-bottom:20px;
+}
+
+.fun-card{
+    max-width:320px;
+    margin:12px auto;
+    padding:14px;
+    border-radius:16px;
+    background:linear-gradient(135deg,#ffb6d5,#ffd1e8);
+    color:#333;
+    font-size:14px;
+    box-shadow:0 8px 18px rgba(0,0,0,.15);
+    animation:bounceIn .6s ease both;
+}
+
+.fun-card:nth-child(2){animation-delay:.2s}
+.fun-card:nth-child(3){animation-delay:.4s}
+.fun-card:nth-child(4){animation-delay:.6s}
+.fun-card:nth-child(5){animation-delay:.8s}
+
+@keyframes bounceIn{
+    0%{opacity:0;transform:scale(.8)}
+    60%{opacity:1;transform:scale(1.05)}
+    100%{transform:scale(1)}
+}
+
+/* ✨ SHARED */
+@keyframes fadeUp{
+    from{opacity:0;transform:translateY(20px)}
+    to{opacity:1;transform:translateY(0)}
+}
+
+</style>
+</head>
+
+<body>
+
+<audio id="bgm" loop>
+<source src="https://cdn.pixabay.com/audio/2022/03/15/audio_4f3b41b5c0.mp3">
+</audio>
+
+<div id="wrapper">
+
+<!-- CARD 1 -->
+<div class="card active">
+    <h2>Happy Birthday 🎂</h2>
+    <p>Dear Tanisha 💖</p>
+    <button onclick="next()">Open 💌</button>
+</div>
+
+<!-- CARD 2 -->
+<div class="card">
+    <h3>Someone Truly Special 🌸</h3>
+    <div class="photo-wrapper">
+        <div class="photo-glow"></div>
+        <div class="photo-frame">
+            <img src="/images/duldul.jpg">
+        </div>
+    </div>
+    <button onclick="next()">Next ➡</button>
+</div>
+
+<!-- CARD 3 -->
+<div class="card">
+    <h3>From My Heart 💌</h3>
+    <p id="typedText" class="long-text"></p>
+    <button onclick="next()">Continue ➡</button>
+</div>
+
+<!-- CARD 4 -->
+<div class="card">
+    <h3>Just One More Thing 🎁</h3>
+    <div class="gift" onclick="openGift()">🎁</div>
+</div>
+
+<!-- CARD 5 -->
+<div class="card">
+    <div class="cat">🐱</div>
+    <h2>huu 🤗</h2>
+    <p>This hug is always for you 💗</p>
+    <button onclick="next()">One Last Moment ✨</button>
+</div>
+
+<!-- CARD 6 FINAL -->
+<div class="card">
+    <div class="final-bg"></div>
+    <h2>Happy Birthday</h2>
+    <div id="nameReveal" class="name-reveal"></div>
+    <p>You don’t need the sky to shine<br>You already do ✨</p>
+</div>
+
+</div>
+<!-- 🌸 POETRY SECTION -->
+<section class="poetry-section">
+    <div class="poetry-box">
+        <h2>Just a Few Lines for You 🌷</h2>
+        <p class="poetry-line">Some people arrive like sunshine…</p>
+        <p class="poetry-line">quiet, warm, and suddenly everything feels lighter.</p>
+        <p class="poetry-line">You are not a chapter,</p>
+        <p class="poetry-line">you are the pause I reread.</p>
+    </div>
+</section>
+
+<!-- 😂 FUNNY SECTION -->
+<section class="funny-section">
+    <h2>Important Facts About You 😌</h2>
+
+    <div class="fun-card">🐱 Your anger is cutest thing</div>
+    <div class="fun-card">🍰 Pizza disappears faster when you’re nearby</div>
+    <div class="fun-card">📱 Your voice feels like comfort to me</div>
+    <div class="fun-card">😂 Hu and Hehee </div>
+</section>
+
+
+<script>
+/* CARD FLOW */
+const cards=document.querySelectorAll('.card');
+let idx=0;
+const music=document.getElementById('bgm');
+
+function show(){
+ cards.forEach((c,i)=>c.classList.toggle('active',i===idx));
+ if(idx===5)revealName();
+}
+function next(){if(idx<cards.length-1){idx++;show();music.play();}}
+function openGift(){idx=4;show();}
+
+/* TYPING */
+const msg=`Happy Birthday to My Favourite Person 🤍
+I don’t know if you realize this, but you live in my thoughts more than you know. Some people come into our lives quietly, and suddenly they become a reason to smile, a reason to feel, a reason to breathe a little deeper. You are that person for me.
+I miss you every single day—your voice, your presence, even those moments when you were angry with me. Strange, but that’s when I felt closest to you. You matter to me in a way I can’t explain properly, only feel.
+On your birthday, I just want you to know that no matter what, if you ever feel hurt, tired, lost, or alone—there is someone who cares deeply. Someone who will always be there for you. You can message me or call me anytime… day or night. Without hesitation.
+I hope this year brings you peace, happiness, and a smile that never fades. And even if I’m not close the way I wish I were, you’ll always remain my favourite person. Always. 🌙✨`;
+let t=0;
+function typeText(){
+ if(t<msg.length){
+  typedText.innerHTML+=msg[t++];
+  setTimeout(typeText,32);
+ }
+}
+setTimeout(typeText,1200);
+
+/* NAME REVEAL */
+function revealName(){
+ const box=document.getElementById("nameReveal");
+ box.innerHTML="";
+ "TANISHA".split("").forEach((l,i)=>{
+  const s=document.createElement("span");
+  s.textContent=l;
+  s.style.animationDelay=(i*0.3)+"s";
+  box.appendChild(s);
+ });
+}
+
+/* FLOATING PETALS & HEARTS */
+setInterval(()=>{
+ const e=document.createElement("div");
+ e.className=Math.random()>0.5?"heart":"petal";
+ e.innerHTML=Math.random()>0.5?"💗":"🌸";
+ e.style.left=Math.random()*100+"%";
+ e.style.fontSize=(Math.random()*16+14)+"px";
+ document.body.appendChild(e);
+ setTimeout(()=>e.remove(),8000);
+},800);
+</script>
+
+</body>
+</html>
+
+
+
+
